@@ -4,6 +4,8 @@
 
 :root {
     --header-bg: #10375c;
+    --navbar-color: #c9d2da;
+    --active-hover: #fff;
 }
 
 html {
@@ -21,13 +23,36 @@ a {
 
 .container {
     width: 1170px;
-    min-width: calc(100% - 48px);
+    max-width: calc(100% - 48px);
     margin: 0 auto;
+}
+
+.btn {
+    --height: 60px;
+
+    display: inline-block;
+    min-width: 205px;
+    height: var(--height);
+    padding: 0 20px;
+    border-radius: 99px;
+    border: 1px solid #2E80CE;
+    font-size: 1.6rem;
+    font-weight: 400;
+    text-align: center;
+    line-height: var(--height);
+    color: #fff;
+    background: #2E80CE;
+}
+
+.btn:hover {
+    opacity: 0.9;
+    cursor: pointer;
 }
 
 /* Header */
 .header {
     min-height: 100vh;
+    padding-top: 30px;
     background: var(--header-bg);
 }
 
@@ -47,7 +72,7 @@ a {
 .logo__circle::before {
     width: 3em;
     height: 3em;
-    background: #2E80CE;
+    background: #2e80ce;
 }
 
 .logo__circle::after {
@@ -75,4 +100,46 @@ a {
 .logo__brand--small {
     font-size: 1.2em;
     font-weight: 300;
+}
+
+/* Header top */
+.header-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.navbar__list {
+    display: flex;
+}
+
+.action__login,
+.navbar__link {
+    padding: 4px 21px;
+    font-size: 1.6rem;
+    font-weight: 300;
+    color: var(--navbar-color);
+}
+
+.navbar__link:hover,
+.navbar__link--active {
+    text-shadow: 1px 0 0 currentColor;
+    color: var(--active-hover);
+}
+
+.navbar__link--active::before {
+    position: relative;
+    top: -2px;
+    left: -8px;
+    content: "";
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--active-hover);
+}
+
+.action__signup {
+    --height: 44px;
+    min-width: 104px;
 }
